@@ -1,0 +1,28 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Gellos project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "database:init": "node scripts/initDatabase.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d1mic/gelosTestProject.git"
+  },
+  "author": "Nikola Dimic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d1mic/gelosTestProject/issues"
+  },
+  "homepage": "https://github.com/d1mic/gelosTestProject#readme",
+  "dependencies": {
+    "minimist": "^1.2.6"
+  },
+  "workspaces": [
+    "imdb-service"
+  ],
+  "type": "module"
+
+}
