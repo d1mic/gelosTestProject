@@ -18,6 +18,8 @@ export const loadModels = async (dbService) => {
   
   await initTitleModel(dbService);
 
+  console.log('Succesfully loaded models.')
+
   return {
     Title,
   };
