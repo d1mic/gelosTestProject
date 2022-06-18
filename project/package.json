@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "database:init": "node scripts/initDatabase.js"
+    "database:init": "node scripts/initDatabase.js",
+    "database:import": "bash scripts/dataimport.sh"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "minimist": "^1.2.6"
   },
   "workspaces": [
-    "imdb-service"
+    "imdb-service",
+    "client"
   ],
   "type": "module"
 
