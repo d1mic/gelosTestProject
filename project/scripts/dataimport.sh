@@ -1,0 +1,6 @@
+sqlite3 db-imdb.sqlite  ".tables"
+sqlite3 -separator $'\t' -header db-imdb.sqlite "select * from title_basics limit 10"
+sqlite3 -separator $'\t' -header db-imdb.sqlite ".import -skip 1 ./database/title.basics.tsv title_basics"
+sqlite3 -separator $'\t' -header db-imdb.sqlite ".import -skip 1 ./database/title.ratings.tsv title_ratings"
+sqlite3 -header db-imdb.sqlite "select *  from title_ratings limit 10;"
+sqlite3 -header db-imdb.sqlite "select *  from title_basics limit 10;"

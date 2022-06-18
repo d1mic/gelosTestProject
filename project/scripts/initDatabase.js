@@ -16,7 +16,6 @@ const logUsage = () => {
   console.log("Usage\n\n npm run database:init -- --out=DB-FILENAME\n");
 };
 
-// Get values from argv
 const args = process.argv.slice(2);
 const argv = parseArgs(args, cliOptions);
 
