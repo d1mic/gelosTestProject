@@ -3,7 +3,7 @@ function Page404() {
     <section className="w-full h-screen">
       <img
         src={process.env.PUBLIC_URL + "/404.png"}
-        class="object-contain w-full h-full"
+        className="object-contain w-full h-full"
         alt="404"
       />
     </section>
