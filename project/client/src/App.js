@@ -1,6 +1,7 @@
 import HomePage from "../src/pages/HomePage";
 import Layout from "./components/ui/Layout";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Page404 from "./components/ui/404";
 
 function App() {
   return (
@@ -8,14 +9,7 @@ function App() {
       <Layout>
         <Routes>
           <Route exact path="/" element={<HomePage />}></Route>
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./ui/Logo";
 
-function Header(props) {
+function Header() {
   return (
     <div>
       <header className="text-gray-600 body-font">
@@ -12,7 +12,6 @@ function Header(props) {
             <Link to="/" className="mr-5 hover:text-gray-900">
               Movies
             </Link>
-
             <Link to="/" className="mr-5 hover:text-gray-900">
               Fun ratings
             </Link>
