@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Movie from "../components/Movie";
 import LoadingPage from "../components/ui/Loading";
 
 function MoviePage() {
@@ -25,13 +26,16 @@ function MoviePage() {
   }
 
   return (
-    <div>
-      <ul>
-        {movieList.map((movie) => {
-          return <div>{movie.primaryTitle}</div>;
-        })}
-      </ul>
-    </div>
+    
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -mx-4 -my-8">
+          {movieList.map((movie) => {
+            return <Movie key={movie.tconst} movie={movie}></Movie>;
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
