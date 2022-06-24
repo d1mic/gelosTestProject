@@ -1,0 +1,116 @@
+{
+  "allMovies": [
+    {
+      "tconst": "tt0000001",
+      "endYear": "\\N",
+      "genres": "Animation,Comedy",
+      "isAdult": false,
+      "originalTitle": "Interesting movie title",
+      "primaryTitle": "Interesting movie title",
+      "runtimeMinutes": 120,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "9.5"
+      }
+    },
+    {
+      "tconst": "tt0000002",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000003",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000004",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000005",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000006",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000007",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    },
+    {
+      "tconst": "tt0000008",
+      "endYear": "\\N",
+      "genres": "Animation,Short",
+      "isAdult": false,
+      "originalTitle": "Best friends forever",
+      "primaryTitle": "Hello my friend",
+      "runtimeMinutes": 5,
+      "startYear": 1892,
+      "titleType": "short",
+      "Rating": {
+        "averageRating": "4.5"
+      }
+    }
+  ]
+}
