@@ -27,13 +27,13 @@ function Movie(props) {
           <h1 className="title-font text-xl font-medium text-gray-900 mb-3">
             {props.movie.primaryTitle}
           </h1>
-          <p class="leading-relaxed mb-5">
+          <div className="leading-relaxed mb-5">
             Movie categories:
             <br></br>
             {movieCategories.map((item) => {
-              return <div>{item}</div>;
+              return <div key={item}>{item}</div>;
             })}
-          </p>
+          </div>
           <div className="">
             r
             <div className="inline-flex items-center">

@@ -16,7 +16,6 @@ function MoviePage() {
       .then((data) => {
         setMovieList(data.data.movies);
         setIsLoading(false);
-        console.log(data.data.movies);
       })
       .catch((err) => {});
   }, []);
@@ -26,7 +25,6 @@ function MoviePage() {
   }
 
   return (
-    
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -mx-4 -my-8">
