@@ -8,7 +8,7 @@ const { Title } = await loadModels(dbService);
  */
 const index = async (req, res) => {
   const pageNum = parseInt(req.query.page) || 0;
-  const itemsPerPage = parseInt(req.query.size) || 10;
+  const itemsPerPage = parseInt(req.query.size) || 8;
 
   try {
     let count = await Title.count({ col: "tconst" });

@@ -1,53 +1,45 @@
-import starImage from "../img/star.png";
+import { CalendarIcon, StarIcon } from "./ui/Icons";
 
 function Movie(props) {
-  let movieCategories = props.movie.genres.split(",");
+  let { startYear, runtimeMinutes, titleType, primaryTitle, genres } =
+    props.movie;
+
+  let movieCategories = genres.split(",");
 
   return (
-    <div className="py-8 px-2 lg:w-1/5" data-test-id="movie">
-      <div className="h-full flex lg:border-2 lg:p-2 rounded-2xl items-start">
-        <div className="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-          <span className="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
-            Year
-          </span>
-          <span className="font-medium text-lg text-gray-800 title-font leading-none pb-2 mb-2 border-b-2">
-            {props.movie.startYear}
-          </span>
-          <span className="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
-            Length
-          </span>
-          <span className="font-small text-sm text-gray-800 title-font leading-none">
-            {props.movie.runtimeMinutes} min
-          </span>
-        </div>
-        <div className="flex-grow pl-6">
-          <h2 className="tracking-widest text-xs title-font font-medium text-rose-700 mb-1">
-            {props.movie.titleType}
-          </h2>
-          <h1 className="title-font text-xl font-medium text-gray-900 mb-3">
-            {props.movie.primaryTitle}
-          </h1>
-          <div className="leading-relaxed mb-5">
-            Movie categories:
-            <br></br>
+    <div class="p-4 md:w-1/4">
+      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+        <img
+          class="lg:h-48 md:h-36 w-full object-cover object-center"
+          src="https://dummyimage.com/720x400"
+          alt="blog"
+        ></img>
+        <div class="p-6">
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
             {movieCategories.map((item) => {
               return <div key={item}>{item}</div>;
             })}
-          </div>
-          <div className="">
-            r
-            <div className="inline-flex items-center">
-              <img
-                alt="blog"
-                src={starImage}
-                className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
-              ></img>
-              <span className="flex-grow flex flex-col pl-3">
-                <span className="title-font font-medium text-gray-900">
-                  9.9
-                </span>
-              </span>
-            </div>
+          </h2>
+          <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+            {primaryTitle}
+          </h1>
+          <p class="leading-relaxed mb-3">
+            Title "{primaryTitle}" is made in year {startYear} and has a runtime
+            of {runtimeMinutes} minutes. It is categorised as a {titleType}{" "}
+            movie in the iMDB database.
+          </p>
+          <div class="flex items-center flex-wrap ">
+            <button class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+              Learn More
+            </button>
+            <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+              <CalendarIcon></CalendarIcon>
+              {startYear}
+            </span>
+            <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+              <StarIcon></StarIcon>
+              9.0
+            </span>
           </div>
         </div>
       </div>
