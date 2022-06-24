@@ -13,9 +13,6 @@ function Header() {
               Movies
             </Link>
             <Link to="/" className="mr-5 hover:text-gray-900">
-              Fun ratings
-            </Link>
-            <Link to="/" className="mr-5 hover:text-gray-900">
               Quotes
             </Link>
           </nav>
