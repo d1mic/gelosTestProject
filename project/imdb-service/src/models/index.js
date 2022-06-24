@@ -33,7 +33,21 @@ export const loadModels = async (dbService) => {
 
   console.log("Succesfully loaded models.");
 
+  console.log("Defining table associations");
+  Title.hasOne(Rating, {
+    foreignKey: {
+      name: "tconst",
+    },
+  });
+
+  Rating.hasOne(Title, {
+    foreignKey: {
+      name: "tconst",
+    },
+  });
+
   return {
     Title,
+    Rating,
   };
 };

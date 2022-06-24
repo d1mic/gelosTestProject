@@ -9,6 +9,9 @@ function Header() {
           <Logo height={10} width={10}></Logo>
           <span className="ml-3 text-xl">Gelos</span>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <Link to="/" className="mr-5 hover:text-gray-900">
+              Home
+            </Link>
             <Link to="/movies" className="mr-5 hover:text-gray-900">
               Movies
             </Link>

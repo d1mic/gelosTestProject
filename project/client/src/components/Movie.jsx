@@ -1,10 +1,11 @@
 import { CalendarIcon, StarIcon } from "./ui/Icons";
 
 function Movie(props) {
-  let { startYear, runtimeMinutes, titleType, primaryTitle, genres } =
+  let { startYear, runtimeMinutes, titleType, primaryTitle, genres, Rating } =
     props.movie;
 
   let movieCategories = genres.split(",");
+  let avgRating = Rating.averageRating || 'N/A'
 
   return (
     <div className="p-4 md:w-1/4">
@@ -40,7 +41,7 @@ function Movie(props) {
 
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <StarIcon></StarIcon>
-              9.0
+              {avgRating}
             </span>
           </div>
         </div>

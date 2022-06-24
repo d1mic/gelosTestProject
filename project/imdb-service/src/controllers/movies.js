@@ -1,7 +1,7 @@
 import { loadModels } from "../models/index.js";
 import dbService from "../services/dbService.js";
 
-const { Title } = await loadModels(dbService);
+const { Title, Rating } = await loadModels(dbService);
 
 /**
  * Controller for getting all movie titles
@@ -13,6 +13,12 @@ const index = async (req, res) => {
   try {
     let count = await Title.count({ col: "tconst" });
     let movies = await Title.findAll({
+      include: {
+        model: Rating,
+        attributes: {
+          exclude: "tconst",
+        },
+      },
       offset: pageNum * itemsPerPage,
       limit: itemsPerPage,
     });
@@ -27,8 +33,8 @@ const index = async (req, res) => {
   }
 };
 
-/** 
- * Controller for getting a specific movie title 
+/**
+ * Controller for getting a specific movie title
  * */
 const show = async (req, res) => {
   const movieId = req.params.id;
