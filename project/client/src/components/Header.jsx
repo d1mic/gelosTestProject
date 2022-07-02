@@ -15,6 +15,9 @@ function Header() {
             <Link to="/movies" className="mr-5 hover:text-gray-900">
               Movies
             </Link>
+            <Link to="/books" className="mr-5 hover:text-gray-900">
+              Books
+            </Link>
             <Link to="/" className="mr-5 hover:text-gray-900">
               Quotes
             </Link>
