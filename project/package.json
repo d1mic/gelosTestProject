@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "database:init": "node scripts/initDatabase.js",
-    "database:import": "bash scripts/dataimport.sh"
+    "database:init:imdb": "npm run database:init -- --type=imdb --out=db-imdb.sqlite",
+    "database:init:books": "npm run database:init -- --type=books --out=db-books.sqlite",
+    "database:import:imdb": "bash scripts/dataimportMovies.sh",
+    "database:import:books": "bash scripts/dataimportBooks.sh"
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,8 @@
   },
   "workspaces": [
     "imdb-service",
+    "books-service",
     "client"
   ],
   "type": "module"
-
 }
