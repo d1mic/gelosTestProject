@@ -1,23 +1,29 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Book from "../components/Book";
+import { getEndingNumPagination } from "../common.js";
 import LoadingPage from "../components/ui/Loading";
+import Pagination from "../components/Pagination";
 
 function BookPage() {
   const [bookList, setBookList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [numOfResults, setNumOfResults] = useState(0);
+  const [pageNum, setPageNum] = useState(0);
 
   /**
    * Gets all books
    */
-  function getInitialBookList() {
+  function getInitialBookList(pageNum) {
     setIsLoading(true);
-    fetch("http://localhost:4001/api/v1/books")
+    fetch(`http://localhost:4001/api/v1/books?page=${pageNum}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setBookList(data.data);
+        setNumOfResults(data.meta.count);
+        setPageNum(data.meta.pageNum);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -25,12 +31,24 @@ function BookPage() {
       });
   }
 
+  function handleNextClick() {
+    if (getEndingNumPagination(pageNum, numOfResults) < numOfResults) {
+      setPageNum(pageNum + 1);
+    }
+  }
+
+  function handlePreviousClick() {
+    if (pageNum > 0) {
+      setPageNum(pageNum - 1);
+    }
+  }
+
   /**
-   * Called on loading page
+   * Called on loading page and when page num is updated
    */
   useEffect(() => {
-    getInitialBookList();
-  }, []);
+    getInitialBookList(pageNum);
+  }, [pageNum]);
 
   if (isLoading) {
     return <LoadingPage></LoadingPage>;
@@ -45,6 +63,13 @@ function BookPage() {
           })}
         </div>
       </div>
+      <Pagination
+        handleNextClick={handleNextClick}
+        handlePreviousClick={handlePreviousClick}
+        pageNum={pageNum}
+        numOfResults={numOfResults}
+      ></Pagination>
+      <br></br>
     </section>
   );
 }

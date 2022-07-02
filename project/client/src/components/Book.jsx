@@ -12,6 +12,7 @@ function Book(props) {
   } = props.book;
 
   let publicationDate = publication_date || "N/A";
+  let mainAuthor = authors.split("/")[0] 
 
   return (
     <div className="p-4 md:w-1/4">
@@ -29,7 +30,7 @@ function Book(props) {
             {title}
           </h1>
           <p className="leading-relaxed mb-3">
-            Book "{title}" is written by {authors} and published by "{publisher}
+            Book "{title}" is written by {mainAuthor} and published by "{publisher}
             ". The book has {num_pages + " pages" || "unknown number of pages"}
           </p>
           <div className="flex items-center flex-wrap ">
