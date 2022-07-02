@@ -1,7 +1,7 @@
 import parseArgs from "minimist";
 import Sequelize from "sequelize";
 import { loadModels } from "../imdb-service/src/models/index.js";
-import { loadBookModels } from "../books-service/models/index.js";
+import { loadBookModels } from "../books-service/src/models/index.js";
 
 const dbConfig = {
   dialect: "sqlite",
@@ -30,10 +30,8 @@ const logUsage = () => {
   console.log(
     "Usage: \n npm run database:init -- --type=DB_TYPE --out=DB_FILENAME \n"
   );
-  console.log("DB_TYPE valid values - [imdb, books, *]");
-  console.log(
-    "DB_FILENAME recommended values - [db-imdb.sqlite , db-books.sqlite]\n"
-  );
+  console.log("DB_TYPE valid values - [imdb, books]");
+  console.log("DB_FILENAME recommended - [db-imdb.sqlite , db-books.sqlite]\n");
 };
 
 const args = process.argv.slice(2);
