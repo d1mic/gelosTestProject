@@ -1,12 +1,14 @@
 import { CalendarIcon, StarIcon } from "./ui/Icons";
-import movie from '../img/movie2.jpg'
+import movie from "../img/movie2.jpg";
+import { checkData } from "../common.js";
 
 function Movie(props) {
   let { startYear, runtimeMinutes, titleType, primaryTitle, genres, Rating } =
     props.movie;
 
-  let movieCategories = genres.split(",");
-  let avgRating = Rating.averageRating || 'N/A'
+  let avgRating = checkData(Rating["averageRating"]);
+  let minutes = checkData(runtimeMinutes);
+  let movieCategories = checkData(genres, "uncategorised").split(",");
 
   return (
     <div className="p-4 md:w-1/4">
@@ -27,13 +29,13 @@ function Movie(props) {
           </h1>
           <p className="leading-relaxed mb-3">
             Title "{primaryTitle}" is made in year {startYear} and has a runtime
-            of {runtimeMinutes} minutes. It is categorised as a {titleType}{" "}
-            movie in the iMDB database.
+            of {runtime} minutes. It is categorised as a {titleType} in the iMDB
+            database.
           </p>
           <div className="flex items-center flex-wrap ">
             <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
               <CalendarIcon></CalendarIcon>
-              {runtimeMinutes} min
+              {minutes} min
             </span>
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <CalendarIcon></CalendarIcon>

@@ -9,7 +9,6 @@ const index = async (req, res) => {
 
   try {
     const count = await Rating.count({ col: "tconst" });
-    console.log(count);
     const ratings = await Rating.findAll({
       include: [
         {

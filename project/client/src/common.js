@@ -10,4 +10,11 @@ const getEndingNumPagination = (pageNum, numOfResults, resultPerPage = 8) => {
   return endNum;
 };
 
-export { getStartingNumPagination, getEndingNumPagination };
+const checkData = (attribute, alt = "N/A") => {
+  if (!attribute || attribute === "\\N") {
+    return alt;
+  }
+  return attribute;
+};
+
+export { getStartingNumPagination, getEndingNumPagination, checkData};
