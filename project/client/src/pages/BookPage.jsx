@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Book from "../components/Book";
 import LoadingPage from "../components/ui/Loading";
 
 function BookPage() {
@@ -36,11 +37,15 @@ function BookPage() {
   }
 
   return (
-    <div>
-      {bookList.map((book) => {
-        return <div key={book.bookID}>{book.title}</div>;
-      })}
-    </div>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-5 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {bookList.map((book) => {
+            return <Book key={book.bookID} book={book}></Book>;
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 

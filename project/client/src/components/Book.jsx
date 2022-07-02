@@ -1,48 +1,50 @@
-import { CalendarIcon, StarIcon } from "./ui/Icons";
-import movie from '../img/movie2.jpg'
+import { CalendarIcon, StarIcon, UserIcon } from "./ui/Icons";
+import bookImg from "../img/book2.jpg";
 
-function Movie(props) {
-  let { startYear, runtimeMinutes, titleType, primaryTitle, genres, Rating } =
-    props.movie;
+function Book(props) {
+  let {
+    title,
+    authors,
+    average_rating,
+    num_pages,
+    publication_date,
+    publisher,
+  } = props.book;
 
-  let movieCategories = genres.split(",");
-  let avgRating = Rating.averageRating || 'N/A'
+  let publicationDate = publication_date || "N/A";
 
   return (
     <div className="p-4 md:w-1/4">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src={movie}
+          src={bookImg}
           alt="blog"
         ></img>
         <div className="p-6">
           <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-            {movieCategories.map((item) => {
-              return <div key={item}>{item}</div>;
-            })}
+            {authors}
           </h2>
           <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            {primaryTitle}
+            {title}
           </h1>
           <p className="leading-relaxed mb-3">
-            Title "{primaryTitle}" is made in year {startYear} and has a runtime
-            of {runtimeMinutes} minutes. It is categorised as a {titleType}{" "}
-            movie in the iMDB database.
+            Book "{title}" is written by {authors} and published by "{publisher}
+            ". The book has {num_pages + " pages" || "unknown number of pages"}
           </p>
           <div className="flex items-center flex-wrap ">
             <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
               <CalendarIcon></CalendarIcon>
-              {runtimeMinutes} min
+              {publicationDate}
             </span>
-            <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
-              <CalendarIcon></CalendarIcon>
-              {startYear}
+            <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-2">
+              <UserIcon></UserIcon>
+              {publisher}
             </span>
 
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <StarIcon></StarIcon>
-              {avgRating}
+              {average_rating}
             </span>
           </div>
         </div>
@@ -51,4 +53,4 @@ function Movie(props) {
   );
 }
 
-export default Movie;
+export default Book;
