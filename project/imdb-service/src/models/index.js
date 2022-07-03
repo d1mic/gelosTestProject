@@ -1,4 +1,4 @@
-import { Model } from "sequelize";
+import { Model, Op } from "sequelize";
 import RatingSchema from "./ratingShema.js";
 import TitleSchema from "./titleShema.js";
 
@@ -49,5 +49,6 @@ export const loadModels = async (dbService) => {
   return {
     Title,
     Rating,
+    Op
   };
 };

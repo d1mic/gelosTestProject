@@ -1,25 +1,33 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import Movie from "../components/Movie";
+import Pagination from "../components/Pagination";
+import { getEndingNumPagination } from "../common.js";
 import SearchBar from "../components/SearchBar";
 import LoadingPage from "../components/ui/Loading";
 
 function MoviePage() {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [numOfResults, setNumOfResults] = useState(0);
+  const [pageNum, setPageNum] = useState(0);
+  const [currentSearch, setCurrentSearch] = useState("empty");
+
   const searchQueryRef = useRef();
 
   /**
    * Gets all movies
    */
-  function getInitialMovieList() {
+  function getInitialMovieList(pageNum) {
     setIsLoading(true);
-    fetch("http://localhost:4000/api/v1/movies")
+    fetch(`http://localhost:4002/api/v1/movies?page=${pageNum}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setMovieList(data.data.movies);
+        setNumOfResults(data.meta.count);
+        setPageNum(data.meta.pageNum);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -31,30 +39,41 @@ function MoviePage() {
    * Gets movie based on the query passed
    * @param {string} searchQuery
    */
-  function getMovieListQuery(searchQuery) {
+  function getMovieListQuery(searchQuery, pageNum) {
     setIsLoading(true);
-    fetch(`http://localhost:4000/api/v1/search/${searchQuery}`)
+    fetch(`http://localhost:4002/api/v1/movies/search?query=${searchQuery}&page=${pageNum}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         setMovieList(data.data.movies);
+        setNumOfResults(data.meta.count);
+        setPageNum(data.meta.pageNum);
         setIsLoading(false);
       });
   }
 
   /**
    * Handles clicking on the search button, if the query is empty returns all movies
-   * @param {*} event 
+   * @param {*} event
    */
   function searchMovieHandler(event) {
     event.preventDefault();
     const searchQuery = searchQueryRef.current.value || "empty";
+    setCurrentSearch(searchQuery);
+    setPageNum(0);
+  }
 
-    if (searchQuery === "empty") {
-      getInitialMovieList();
-    } else {
-      getMovieListQuery(searchQuery);
+  function handleNextClick() {
+    if (getEndingNumPagination(pageNum, numOfResults) < numOfResults) {
+      setPageNum(pageNum + 1);
+    }
+  }
+
+  function handlePreviousClick() {
+    if (pageNum > 0) {
+      setPageNum(pageNum - 1);
     }
   }
 
@@ -62,8 +81,12 @@ function MoviePage() {
    * Called on loading page
    */
   useEffect(() => {
-    getInitialMovieList();
-  }, []);
+    if (currentSearch === "empty") {
+      getInitialMovieList(pageNum);
+    } else {
+      getMovieListQuery(currentSearch, pageNum);
+    }
+  }, [pageNum, currentSearch]);
 
   if (isLoading) {
     return <LoadingPage></LoadingPage>;
@@ -83,6 +106,12 @@ function MoviePage() {
           })}
         </div>
       </div>
+      <Pagination
+        handleNextClick={handleNextClick}
+        handlePreviousClick={handlePreviousClick}
+        pageNum={pageNum}
+        numOfResults={numOfResults}
+      ></Pagination>
     </section>
   );
 }

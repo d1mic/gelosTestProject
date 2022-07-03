@@ -29,7 +29,7 @@ function Movie(props) {
           </h1>
           <p className="leading-relaxed mb-3">
             Title "{primaryTitle}" is made in year {startYear} and has a runtime
-            of {runtime} minutes. It is categorised as a {titleType} in the iMDB
+            of {minutes} minutes. It is categorised as a {titleType} in the iMDB
             database.
           </p>
           <div className="flex items-center flex-wrap ">
