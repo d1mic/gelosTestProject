@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import MoviePage from "./MoviePage";
+import MoviePage from "./pages/MoviePage";
 
 test("renders learn react link", async () => {
   render(<MoviePage />);
 
-  expect(await screen.findByText("Some movie title")).toBeInTheDocument();
+  expect(await screen.findByText("Interesting movie title")).toBeInTheDocument();
 });
 
 test("Seach bar exists", async () => {

@@ -50,7 +50,7 @@ function Book(props) {
 
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <StarIcon></StarIcon>
-              {average_rating}
+              {average_rating * 2}
             </span>
           </div>
         </div>
