@@ -17,4 +17,4 @@ const checkData = (attribute, alt = "N/A") => {
   return attribute;
 };
 
-export { getStartingNumPagination, getEndingNumPagination, checkData};
+export { getStartingNumPagination, getEndingNumPagination, checkData };

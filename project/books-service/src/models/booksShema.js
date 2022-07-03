@@ -33,7 +33,7 @@ const BookShema = {
     type: DataTypes.INTEGER,
   },
   publication_date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
   },
   publisher: {
     type: DataTypes.STRING,

@@ -1,5 +1,6 @@
 import { CalendarIcon, StarIcon, UserIcon } from "./ui/Icons";
 import bookImg from "../img/book2.jpg";
+import { checkData } from "../common";
 
 function Book(props) {
   let {
@@ -11,8 +12,11 @@ function Book(props) {
     publisher,
   } = props.book;
 
-  let publicationDate = publication_date || "N/A";
-  let mainAuthor = authors.split("/")[0] 
+  let publicationDate = checkData(publication_date);
+  if (publicationDate !== "N/A") {
+    publicationDate = publicationDate.split("/")[2];
+  }
+  let mainAuthor = authors.split("/")[0];
 
   return (
     <div className="p-4 md:w-1/4">
@@ -20,7 +24,7 @@ function Book(props) {
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
           src={bookImg}
-          alt="blog"
+          alt="book"
         ></img>
         <div className="p-6">
           <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
@@ -30,7 +34,8 @@ function Book(props) {
             {title}
           </h1>
           <p className="leading-relaxed mb-3">
-            Book "{title}" is written by {mainAuthor} and published by "{publisher}
+            Book "{title}" is written by {mainAuthor} and published by "
+            {publisher}
             ". The book has {num_pages + " pages" || "unknown number of pages"}
           </p>
           <div className="flex items-center flex-wrap ">

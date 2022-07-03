@@ -1,4 +1,4 @@
-import { Model } from "sequelize";
+import { Model, Op } from "sequelize";
 import BookShema from "./booksShema.js";
 
 class Books extends Model {}
@@ -18,5 +18,5 @@ export const loadBookModels = async (dbService) => {
   await initBooksModel(dbService);
   console.log("Succesfully loaded book models.");
 
-  return { Books };
+  return { Books, Op };
 };
