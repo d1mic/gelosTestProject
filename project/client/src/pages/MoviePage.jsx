@@ -5,6 +5,7 @@ import Pagination from "../components/Pagination";
 import { getEndingNumPagination } from "../common.js";
 import SearchBar from "../components/SearchBar";
 import LoadingPage from "../components/ui/Loading";
+import EmptySearch from "../components/ui/EmptySearch";
 
 function MoviePage() {
   const [movieList, setMovieList] = useState([]);
@@ -41,7 +42,9 @@ function MoviePage() {
    */
   function getMovieListQuery(searchQuery, pageNum) {
     setIsLoading(true);
-    fetch(`http://localhost:4002/api/v1/movies/search?query=${searchQuery}&page=${pageNum}`)
+    fetch(
+      `http://localhost:4002/api/v1/movies/search?query=${searchQuery}&page=${pageNum}`
+    )
       .then((response) => {
         return response.json();
       })
@@ -101,9 +104,13 @@ function MoviePage() {
 
       <div className="container px-5 py-5 mx-auto">
         <div className="flex flex-wrap -m-4">
-          {movieList.map((movie) => {
-            return <Movie key={movie.tconst} movie={movie}></Movie>;
-          })}
+          {movieList.length > 0 ? (
+            movieList.map((movie) => {
+              return <Movie key={movie.tconst} movie={movie}></Movie>;
+            })
+          ) : (
+            <EmptySearch></EmptySearch>
+          )}
         </div>
       </div>
       <Pagination
@@ -112,6 +119,7 @@ function MoviePage() {
         pageNum={pageNum}
         numOfResults={numOfResults}
       ></Pagination>
+      <br></br>
     </section>
   );
 }
