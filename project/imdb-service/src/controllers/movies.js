@@ -70,7 +70,6 @@ const search = async (req, res) => {
       offset: pageNum * itemsPerPage,
       limit: itemsPerPage,
     });
-    console.log(rows);
     res.status(200);
     res.json({
       meta: { count, pageNum, itemsPerPage },

@@ -21,7 +21,7 @@ function MoviePage() {
    */
   function getInitialMovieList(pageNum) {
     setIsLoading(true);
-    fetch(`http://localhost:4002/api/v1/movies?page=${pageNum}`)
+    fetch(`http://localhost:4000/api/v1/movies?page=${pageNum}`)
       .then((response) => {
         return response.json();
       })
@@ -32,7 +32,11 @@ function MoviePage() {
         setIsLoading(false);
       })
       .catch((err) => {
-        // TODO: handle errors
+        console.log(err);
+        setIsLoading(false);
+        setMovieList([]);
+        setNumOfResults(0);
+        setPageNum(0);
       });
   }
 
@@ -43,17 +47,23 @@ function MoviePage() {
   function getMovieListQuery(searchQuery, pageNum) {
     setIsLoading(true);
     fetch(
-      `http://localhost:4002/api/v1/movies/search?query=${searchQuery}&page=${pageNum}`
+      `http://localhost:4000/api/v1/movies/search?query=${searchQuery}&page=${pageNum}`
     )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setMovieList(data.data.movies);
         setNumOfResults(data.meta.count);
         setPageNum(data.meta.pageNum);
         setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+        setMovieList([]);
+        setNumOfResults(0);
+        setPageNum(0);
       });
   }
 

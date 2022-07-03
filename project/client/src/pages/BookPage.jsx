@@ -31,7 +31,11 @@ function BookPage() {
         setIsLoading(false);
       })
       .catch((err) => {
-        // TODO: handle errors
+        console.log(err);
+        setBookList([]);
+        setNumOfResults(0);
+        setPageNum(0);
+        setIsLoading(false);
       });
   }
 
@@ -47,6 +51,13 @@ function BookPage() {
         setBookList(data.data);
         setNumOfResults(data.meta.count);
         setPageNum(data.meta.pageNum);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setBookList([]);
+        setNumOfResults(0);
+        setPageNum(0);
         setIsLoading(false);
       });
   }
