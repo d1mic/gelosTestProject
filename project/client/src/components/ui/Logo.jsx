@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function Logo(props) {
   return (
-    <div>
+    <div data-testid="logo">
       <Link to="/">
         <svg
           viewBox="0 0 1024 1024"
