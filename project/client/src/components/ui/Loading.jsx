@@ -22,7 +22,10 @@ function SpinnerIcon() {
 function LoadingPage() {
   return (
     <div>
-      <div className="h-screen flex items-center justify-center">
+      <div
+        datatest-id="loader"
+        className="h-screen flex items-center justify-center"
+      >
         <SpinnerIcon></SpinnerIcon>
       </div>
     </div>

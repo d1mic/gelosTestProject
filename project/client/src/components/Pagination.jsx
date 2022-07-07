@@ -4,15 +4,23 @@ function PaginationSuccessText(props) {
   return (
     <span className="text-sm text-gray-700">
       Showing{" "}
-      <span className="font-semibold text-gray-900">
+      <span
+        data-testid="startNum"
+        className="font-semibold text-gray-900"
+      >
         {getStartingNumPagination(props.pageNum)}
       </span>{" "}
       to{" "}
-      <span className="font-semibold text-gray-900 ">
+      <span
+        data-testid="endingNum"
+        className="font-semibold text-gray-900 "
+      >
         {getEndingNumPagination(props.pageNum, props.numOfResults)}
       </span>{" "}
       of{" "}
-      <span className="font-semibold text-gray-900">{props.numOfResults}</span>{" "}
+      <span data-testid="numofResults" className="font-semibold text-gray-900">
+        {props.numOfResults}
+      </span>{" "}
       Entries
     </span>
   );
@@ -30,7 +38,7 @@ function Pagination(props) {
   const numOfResults = props.numOfResults;
 
   return (
-    <section>
+    <section id="pagination">
       {numOfResults ? (
         <div className="flex flex-col items-center">
           <PaginationSuccessText
