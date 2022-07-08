@@ -44,7 +44,6 @@ class BasePage {
 
   /**
    * Gets the total number of items from the pagination
-   * @returns {number}
    */
   async getTotalPaginationNumber() {
     await this.totalNumOfResults.waitFor();
@@ -67,6 +66,32 @@ class BasePage {
   async verifyPageEndNum(expectedEndNum) {
     let pageStartNum = parseInt(await this.pageEndNum.innerText());
     expect(pageStartNum).toEqual(expectedEndNum);
+  }
+
+  /**
+   * Verifies that the total num in the pagination is less then initialNum
+   * @param {number} initialNum - initial number
+   * @param {string} itemName - name of items that are counted
+   */
+  async verifyTotalNumOfItemsLessThen(initialNum, itemName = "movies") {
+    let totalNumOfResults = await this.getTotalPaginationNumber();
+    expect(
+      totalNumOfResults,
+      `Expected total number of ${itemName} to be less then ${initialNum}`
+    ).toBeLessThan(initialNum);
+  }
+
+  /**
+   * Verifies that the total number of items is equal to the expected value
+   * @param {number} expectedValue
+   * @param {string} itemName - name of items that are counted
+   */
+  async verifyTotalNumOfItemsEqual(expectedValue, itemName) {
+    let totalNumOfResults = await this.getTotalPaginationNumber();
+    expect(
+      totalNumOfResults,
+      `Expected total number of ${itemName} to equal ${expectedValue}`
+    ).toEqual(expectedValue);
   }
 
   async clickNext() {

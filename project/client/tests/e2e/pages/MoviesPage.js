@@ -6,7 +6,6 @@ class MoviesPage extends BasePage {
     super(page);
     this.movieCard = page.locator('[datatest-id="movie"]');
     this.moviePageComponent = page.locator("_react=MoviePage");
-    this.movieSearchField = page.locator("#default-search");
     this.movieTitleSelector = "h1";
     this.movieCategory = ".category";
   }
@@ -33,7 +32,6 @@ class MoviesPage extends BasePage {
 
   /**
    * Gets the number of movies presented on the current page
-   * @returns {Promise<number>}
    */
   async getNumOfMoviesOnPage() {
     await this.movieCard.first().waitFor();
@@ -49,6 +47,22 @@ class MoviesPage extends BasePage {
   }
 
   /**
+   * Verifies that the total number of movies in the pagination is less than initial number
+   * @param {number} initialNum
+   */
+  async verifyTotalNumOfMoviesLessThen(initialNum) {
+    return this.verifyTotalNumOfItemsLessThen(initialNum, "movies");
+  }
+
+  /**
+   * Verifies that the total number of movies is equal to the expected value
+   * @param {number} expectedValue
+   */
+  async verifyTotalNumOfMoviesEqual(expectedValue) {
+    return this.verifyTotalNumOfItemsEqual(expectedValue, "movies");
+  }
+
+  /**
    * Verifies that the number of movies on the current page is less than initial number
    * @param {number} initialNum
    */
@@ -61,18 +75,6 @@ class MoviesPage extends BasePage {
   }
 
   /**
-   * Verifies that the total number of movies in the pagination is less than initial number
-   * @param {number} initialNum
-   */
-  async verifyTotalNumOfMoviesLessThen(initialNum) {
-    let totalNumOfResults = await this.getTotalNumOfMovies();
-    expect(
-      totalNumOfResults,
-      `Expected total number of movies to be less then ${initialNum}`
-    ).toBeLessThan(initialNum);
-  }
-
-  /**
    * Verifies that the number of movies on the current page is equal to the expected value
    * @param {number} expectedValue
    */
@@ -81,18 +83,6 @@ class MoviesPage extends BasePage {
     expect(
       currentNumOfmovies,
       `Expected number of movies on a page to equal ${expectedValue}`
-    ).toEqual(expectedValue);
-  }
-
-  /**
-   * Verifies that the total number of movies is equal to the expected value
-   * @param {number} expectedValue
-   */
-  async verifyTotalNumOfMoviesEqual(expectedValue) {
-    let totalNumOfResults = await this.getTotalNumOfMovies();
-    expect(
-      totalNumOfResults,
-      `Expected total number of movies to equal ${expectedValue}`
     ).toEqual(expectedValue);
   }
 
