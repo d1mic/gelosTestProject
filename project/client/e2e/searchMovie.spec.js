@@ -39,4 +39,14 @@ test.describe("Search movie tests", () => {
     await moviesPage.search("");
     await moviesPage.verifyTotalNumOfMoviesEqual(initialNumOfMovies);
   });
+
+  test("Valid search query - search returns proper data", async ({ page }) => {
+    const moviesPage = new MoviesPage(page);
+    const searchQuery = "Hunger games";
+    await moviesPage.search(searchQuery);
+    let numOfMovies = await moviesPage.getNumOfMoviesOnPage();
+    for (let i = 0; i < numOfMovies; i++) {
+      await moviesPage.verifyMovieTitle(i, searchQuery);
+    }
+  });
 });
