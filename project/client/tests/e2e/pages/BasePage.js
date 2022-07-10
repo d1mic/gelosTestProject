@@ -10,7 +10,7 @@ class BasePage {
     this.pageStartNum = page.locator('[data-testid="startNum"]');
     this.pageEndNum = page.locator('[data-testid="endingNum"]');
     this.paginationText = page.locator("#pagination");
-    this.loader = page.locator('[datatest-id="loader"]');
+    this.loader = page.locator('[data-testid="loader"]');
     this.totalNumOfResults = this.paginationText.locator(
       "[data-testid='numofResults']"
     );

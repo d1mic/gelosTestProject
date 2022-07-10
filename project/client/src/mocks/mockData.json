@@ -1,4 +1,55 @@
 {
+  "allBooksResponse": {
+    "data": [
+      {
+        "bookID": "1",
+        "title": "Some book title",
+        "authors": "J.K. Rowling/Mary GrandPré",
+        "average_rating": 4.57,
+        "isbn": "0439785960",
+        "isbn13": 9780439785969,
+        "language_code": "eng",
+        "num_pages": 652,
+        "ratings_count": 2095690,
+        "text_reviews_count": 27591,
+        "publication_date": "9/16/2006",
+        "publisher": "Scholastic Inc."
+      },
+      {
+        "bookID": "2",
+        "title": "Some other book title",
+        "authors": "J.K. Rowling/Mary GrandPré",
+        "average_rating": 4.49,
+        "isbn": "0439358078",
+        "isbn13": 9780439358071,
+        "language_code": "eng",
+        "num_pages": 870,
+        "ratings_count": 2153167,
+        "text_reviews_count": 29221,
+        "publication_date": "9/1/2004",
+        "publisher": "Scholastic Inc."
+      },
+      {
+        "bookID": "3",
+        "title": "Hello World",
+        "authors": "J.K. Rowling",
+        "average_rating": 4.42,
+        "isbn": "0439554896",
+        "isbn13": 9780439554893,
+        "language_code": "eng",
+        "num_pages": 352,
+        "ratings_count": 6333,
+        "text_reviews_count": 244,
+        "publication_date": "11/1/2003",
+        "publisher": "Scholastic"
+      }
+    ],
+    "meta": {
+      "count": 11127,
+      "itemsPerPage": 3,
+      "pageNum": 0
+    }
+  },
   "allMovies": [
     {
       "tconst": "tt0000001",

@@ -11,7 +11,7 @@ function Movie(props) {
   let movieCategories = checkData(genres, "uncategorised").split(",");
 
   return (
-    <div className="p-4 md:w-1/4" datatest-id="movie">
+    <div className="p-4 md:w-1/4" data-testid="movie">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"

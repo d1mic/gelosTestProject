@@ -1,4 +1,5 @@
 import CardWithTitle from "../components/CardWithTitle";
+import contentData from "../content/homepageContent.json";
 
 function HomePage() {
   const someRandomText =
@@ -25,7 +26,7 @@ function HomePage() {
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           <CardWithTitle
             title="Find your favourite movies!"
-            text={someRandomText}
+            text={contentData.moviesHomepage}
           ></CardWithTitle>
           <CardWithTitle
             title="Find your favourite ratings!"

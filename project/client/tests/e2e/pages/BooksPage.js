@@ -5,7 +5,7 @@ class BooksPage extends BasePage {
   constructor(page) {
     super(page);
     this.bookPageComponent = page.locator("_react=BookPage");
-    this.bookCard = page.locator("//div[@datatest-id='book']"); // xpath example
+    this.bookCard = page.locator("//div[@data-testid='book']"); // xpath example
     this.bookTitleSelector = "h1";
   }
 

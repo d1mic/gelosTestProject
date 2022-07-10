@@ -4,7 +4,7 @@ const { BasePage } = require("./BasePage");
 class MoviesPage extends BasePage {
   constructor(page) {
     super(page);
-    this.movieCard = page.locator('[datatest-id="movie"]');
+    this.movieCard = page.locator('[data-testid="movie"]');
     this.moviePageComponent = page.locator("_react=MoviePage");
     this.movieTitleSelector = "h1";
     this.movieCategory = ".category";

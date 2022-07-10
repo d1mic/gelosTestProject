@@ -23,7 +23,7 @@ function LoadingPage() {
   return (
     <div>
       <div
-        datatest-id="loader"
+        data-testid="loader"
         className="h-screen flex items-center justify-center"
       >
         <SpinnerIcon></SpinnerIcon>

@@ -19,7 +19,7 @@ function Book(props) {
   let mainAuthor = authors.split("/")[0];
 
   return (
-    <div className="p-4 md:w-1/4" datatest-id="book">
+    <div className="p-4 md:w-1/4" data-testid="book">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
