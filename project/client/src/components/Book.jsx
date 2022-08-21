@@ -17,6 +17,12 @@ function Book(props) {
     publicationDate = publicationDate.split("/")[2];
   }
   let mainAuthor = authors.split("/")[0];
+  let publisherData = publisher || "Unknown";
+
+  let rating = "N/A";
+  if (average_rating && average_rating > 0 && average_rating <= 5) {
+    rating = average_rating * 2;
+  }
 
   return (
     <div className="p-4 md:w-1/4" data-testid="book">
@@ -33,9 +39,9 @@ function Book(props) {
           <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
             {title}
           </h1>
-          <p className="leading-relaxed mb-3">
+          <p className="leading-relaxed mb-3" data-testid="bookText">
             Book "{title}" is written by {mainAuthor} and published by "
-            {publisher}
+            {publisherData}
             ". The book has {num_pages + " pages" || "unknown number of pages"}
           </p>
           <div className="flex items-center flex-wrap ">
@@ -45,12 +51,12 @@ function Book(props) {
             </span>
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-2">
               <UserIcon></UserIcon>
-              {publisher}
+              {publisherData}
             </span>
 
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <StarIcon></StarIcon>
-              {average_rating * 2}
+              {rating}
             </span>
           </div>
         </div>

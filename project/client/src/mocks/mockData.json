@@ -50,118 +50,135 @@
       "pageNum": 0
     }
   },
-  "allMovies": [
-    {
-      "tconst": "tt0000001",
-      "endYear": "\\N",
-      "genres": "Animation,Comedy",
-      "isAdult": false,
-      "originalTitle": "Interesting movie title",
-      "primaryTitle": "Interesting movie title",
-      "runtimeMinutes": 120,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "9.5"
-      }
+  "allMoviesResponse": {
+    "meta": {
+      "count": 10309,
+      "pageNum": 0,
+      "itemsPerPage": 8
     },
-    {
-      "tconst": "tt0000002",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000003",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000004",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000005",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000006",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000007",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
-    },
-    {
-      "tconst": "tt0000008",
-      "endYear": "\\N",
-      "genres": "Animation,Short",
-      "isAdult": false,
-      "originalTitle": "Best friends forever",
-      "primaryTitle": "Hello my friend",
-      "runtimeMinutes": 5,
-      "startYear": 1892,
-      "titleType": "short",
-      "Rating": {
-        "averageRating": "4.5"
-      }
+    "data": {
+      "movies": [
+        {
+          "tconst": "tt10083340",
+          "titleType": "movie",
+          "primaryTitle": "Movie title for the test",
+          "originalTitle": "Gangubai Kathiawadi",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 152,
+          "genres": "Biography,Crime,Drama",
+          "Rating": {
+            "averageRating": 7,
+            "numVotes": 47665
+          }
+        },
+        {
+          "tconst": "tt10131024",
+          "titleType": "movie",
+          "primaryTitle": "Movie title for some other test",
+          "originalTitle": "Movie title for some other test",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 89,
+          "genres": "Thriller",
+          "Rating": {
+            "averageRating": 6,
+            "numVotes": 6389
+          }
+        },
+        {
+          "tconst": "tt10223460",
+          "titleType": "movie",
+          "primaryTitle": "Marry Me",
+          "originalTitle": "Marry Me",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 112,
+          "genres": "Comedy,Music,Romance",
+          "Rating": {
+            "averageRating": 6.1,
+            "numVotes": 23264
+          }
+        },
+        {
+          "tconst": "tt10340562",
+          "titleType": "movie",
+          "primaryTitle": "Etharkkum Thunindhavan",
+          "originalTitle": "Etharkkum Thunindhavan",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 151,
+          "genres": "Action,Crime,Drama",
+          "Rating": {
+            "averageRating": 6.6,
+            "numVotes": 11152
+          }
+        },
+        {
+          "tconst": "tt10393870",
+          "titleType": "movie",
+          "primaryTitle": "Jayeshbhai Jordaar",
+          "originalTitle": "Jayeshbhai Jordaar",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 121,
+          "genres": "Comedy,Drama",
+          "Rating": {
+            "averageRating": 7.5,
+            "numVotes": 11245
+          }
+        },
+        {
+          "tconst": "tt10698680",
+          "titleType": "movie",
+          "primaryTitle": "K.G.F: Chapter 2",
+          "originalTitle": "K.G.F: Chapter 2",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 168,
+          "genres": "Action,Crime,Drama",
+          "Rating": {
+            "averageRating": 8.7,
+            "numVotes": 102606
+          }
+        },
+        {
+          "tconst": "tt10733228",
+          "titleType": "movie",
+          "primaryTitle": "Gehraiyaan",
+          "originalTitle": "Gehraiyaan",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 148,
+          "genres": "Drama,Romance",
+          "Rating": {
+            "averageRating": 6.2,
+            "numVotes": 41695
+          }
+        },
+        {
+          "tconst": "tt10806040",
+          "titleType": "movie",
+          "primaryTitle": "Valimai",
+          "originalTitle": "Valimai",
+          "isAdult": false,
+          "startYear": 2022,
+          "endYear": "\\N",
+          "runtimeMinutes": 178,
+          "genres": "Action,Crime,Thriller",
+          "Rating": {
+            "averageRating": 6.2,
+            "numVotes": 17687
+          }
+        }
+      ]
     }
-  ]
+  }
 }

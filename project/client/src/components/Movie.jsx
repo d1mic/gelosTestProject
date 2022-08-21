@@ -6,9 +6,18 @@ function Movie(props) {
   let { startYear, runtimeMinutes, titleType, primaryTitle, genres, Rating } =
     props.movie;
 
+  let year = checkData(startYear);
   let avgRating = checkData(Rating["averageRating"]);
   let minutes = checkData(runtimeMinutes);
   let movieCategories = checkData(genres, "uncategorised").split(",");
+
+  if (avgRating < 0 || avgRating > 10) {
+    avgRating = "N/A";
+  }
+
+  if (minutes < 0) {
+    minutes = "N/A";
+  }
 
   return (
     <div className="p-4 md:w-1/4" data-testid="movie">
@@ -43,7 +52,7 @@ function Movie(props) {
             </span>
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">
               <CalendarIcon></CalendarIcon>
-              {startYear}
+              {year}
             </span>
 
             <span className="text-gray-400 inline-flex items-center leading-none text-sm pr-3 py-1">

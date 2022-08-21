@@ -101,7 +101,5 @@ test.describe("Movies api integration tests", () => {
 
   // TODO: Kombinovano - npr svi movies pa search za jednog
 
-  // TODO: za books sve
-
   // TODO: KOmbinovano - npr svi movies pa onda rating da se poklapa sa ovim
 });
