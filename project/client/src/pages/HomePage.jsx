@@ -1,9 +1,10 @@
 import CardWithTitle from "../components/CardWithTitle";
 import contentData from "../content/homepageContent.json";
+import movie from "../img/movie2.jpg";
+import book from "../img/book2.jpg"
+import audience from "../img/audience.png"
 
 function HomePage() {
-  const someRandomText =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus elementum ligula, vel faucibus nunc facilisis ut. Mauris in condimentum urna. Sed et maximus diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
 
   return (
     <section className="text-gray-600 body-font">
@@ -17,9 +18,7 @@ function HomePage() {
               Get ready to be entertained
             </h1>
             <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-              Street art subway tile salvia four dollar toast bitters selfies
-              quinoa yuccie synth meditation iPhone intelligentsia prism tofu.
-              Viral gochujang bitters dreamcatcher.
+              {contentData.gelosStory}
             </p>
           </div>
         </div>
@@ -27,14 +26,17 @@ function HomePage() {
           <CardWithTitle
             title="Find your favourite movies!"
             text={contentData.moviesHomepage}
+            img={movie}
           ></CardWithTitle>
           <CardWithTitle
-            title="Find your favourite ratings!"
-            text={someRandomText}
+            title="Find new book titles!"
+            text={contentData.booksHomepage}
+            img={book}
           ></CardWithTitle>
           <CardWithTitle
-            title="Generate cool quoutes!"
-            text={someRandomText}
+            title="Check what the audience thinks!"
+            text={contentData.ratingsHomepage}
+            img={audience}
           ></CardWithTitle>
         </div>
       </div>

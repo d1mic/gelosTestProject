@@ -24,6 +24,34 @@ module.exports.verifyMovieTypes = (movieObj) => {
   }
 };
 
+/**
+ * Verifies if book has the expected types
+ * @param {*} bookObj
+ */
+ module.exports.verifyBookTypes = (movieObj) => {
+  let movieObjExpectedTypes = {
+    bookID: 'string',
+    title: "string",
+    authors: 'string',
+    average_rating: 'number',
+    isbn: 'string',
+    isbn13: 'number',
+    language_code: 'string',
+    num_pages: 'number',
+    ratings_count: 'number',
+    text_reviews_count: 'number',
+    publication_date: 'string',
+    publisher: 'string'
+  };
+
+  for (const key in movieObjExpectedTypes) {
+    expect(
+      typeof movieObj[key],
+      `Expected ${key} to be type of ${movieObjExpectedTypes[key]}`
+    ).toBe(movieObjExpectedTypes[key]);
+  }
+};
+
 module.exports.verifyMovieLimits = (
   movieObj,
   minStartYear = 1960,
