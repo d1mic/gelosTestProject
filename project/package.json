@@ -4,6 +4,10 @@
   "description": "Gellos project",
   "main": "index.js",
   "scripts": {
+    "client:dev": "REACT_APP_MOCK_DATA=true npm start --workspace=client",
+    "client": "npm start --workspace=client",
+    "imdb": "npm start --workspace=imdb-service",
+    "books": "npm start --workspace=books-service",
     "test": "echo \"Error: no test specified\" && exit 1",
     "database:init": "node scripts/initDatabase.js",
     "database:init:imdb": "npm run database:init -- --type=imdb --out=db-imdb.sqlite",

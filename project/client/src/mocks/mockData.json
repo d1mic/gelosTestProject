@@ -45,14 +45,14 @@
       }
     ],
     "meta": {
-      "count": 11127,
-      "itemsPerPage": 3,
+      "count": 3,
+      "itemsPerPage": 8,
       "pageNum": 0
     }
   },
   "allMoviesResponse": {
     "meta": {
-      "count": 10309,
+      "count": 8,
       "pageNum": 0,
       "itemsPerPage": 8
     },
