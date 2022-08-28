@@ -2,7 +2,9 @@ import { DataTypes } from "sequelize";
 
 const BookShema = {
   bookID: {
-    type: DataTypes.STRING,
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    allowNull: false,
     primaryKey: true,
   },
   title: {
@@ -13,6 +15,8 @@ const BookShema = {
   },
   average_rating: {
     type: DataTypes.NUMBER,
+    max: 5,
+    min: 1,
   },
   isbn: {
     type: DataTypes.STRING,

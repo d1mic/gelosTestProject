@@ -1,5 +1,6 @@
 import Sequelize from "sequelize";
-console.log(process.env.DB_CONNECTION);
+import "dotenv/config";
+
 const configuration = {
   dialect: "sqlite",
   storage: process.env.DB_CONNECTION,
