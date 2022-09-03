@@ -1,4 +1,6 @@
 import Sequelize from "sequelize";
+import "dotenv/config";
+
 
 const configuration = {
   dialect: "sqlite",

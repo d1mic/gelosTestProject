@@ -49,6 +49,6 @@ export const loadModels = async (dbService) => {
   return {
     Title,
     Rating,
-    Op
+    Op,
   };
 };
