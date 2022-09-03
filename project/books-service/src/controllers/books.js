@@ -57,7 +57,7 @@ const search = async (req, res) => {
 };
 
 /**
- * Deletes the book based on the provided bookID
+ * Deletes the book based on the provided id
  * @param {*} req - request with parameter id
  * @param {*} res - response, json
  */

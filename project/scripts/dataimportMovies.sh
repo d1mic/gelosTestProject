@@ -11,6 +11,7 @@ DELETE FROM title_basics WHERE runtimeMinutes='\N' OR runtimeMinutes<60;
 DELETE FROM title_ratings WHERE numVotes<5000 OR averageRating<6;
 DELETE FROM title_basics WHERE tconst NOT IN (SELECT r.tconst FROM title_ratings r);
 DELETE FROM title_ratings WHERE tconst NOT IN (SELECT b.tconst FROM title_basics b);
+vacuum;
 SELECT COUNT(*) FROM title_basics;
 SELECT COUNT(*) FROM title_ratings;
 
