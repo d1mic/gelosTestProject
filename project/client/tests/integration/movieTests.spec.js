@@ -1,9 +1,12 @@
+/* eslint-disable jest/valid-expect */
 const { test, expect } = require("@playwright/test");
 const {
   verifyMovieRatingLimits,
   verifyMovieTypes,
   verifyMetaValues,
   verifyMovieLimits,
+  getRandomFloat,
+  getDifferentRandomRating,
 } = require("./helpers/assertions");
 
 test.describe("Movies api integration tests", () => {
@@ -97,6 +100,29 @@ test.describe("Movies api integration tests", () => {
     verifyMovieTypes(responseBody.data);
     expect(responseBody.data.tconst).toBe(selectedMovie.tconst);
     expect(responseBody.data.primaryTitle).toBe(selectedMovie.primaryTitle);
+  });
+
+  test("Edit specific movie", async ({ request }) => {
+    const specificMovie = "tt0056048";
+    const expectedRating = getRandomFloat(5, 10, 2);
+
+    const editMovie = await request.put(
+      `${baseUrl}/api/v1/movies/${specificMovie}`,
+      { data: { rating: expectedRating } }
+    );
+    expect(editMovie.status()).toBe(200);
+    const editMovieResponse = JSON.parse(await editMovie.text());
+    let editedRating = editMovieResponse.data.averageRating;
+    expect(editedRating, "Rating did not update properly").toBe(expectedRating);
+
+    const getMovie = await request.get(
+      `${baseUrl}/api/v1/movies/${specificMovie}`
+    );
+    expect(getMovie.status()).toBe(200);
+    const getMovieResponse = JSON.parse(await getMovie.text());
+    verifyMovieTypes(getMovieResponse.data);
+    let currentRating = getMovieResponse.data.Rating.averageRating;
+    expect(currentRating, 'Rating did not update in the database').toBe(expectedRating);
   });
 
   // TODO: Kombinovano - npr svi movies pa search za jednog

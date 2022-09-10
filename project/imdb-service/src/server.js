@@ -7,9 +7,11 @@ import ratingRouter from "./routers/ratings.js";
 const server = express();
 
 server.use(cors());
+server.use(express.json());
+
 // add routes
 server.use("/api/v1", generalRouter);
-server.use("/api/v1", ratingRouter)
+server.use("/api/v1", ratingRouter);
 server.use("/api/v1", moviesRouter);
 
 export default server;

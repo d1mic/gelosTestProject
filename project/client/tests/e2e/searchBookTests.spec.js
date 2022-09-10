@@ -15,10 +15,10 @@ test.describe("Search books tests", () => {
 
   test("Valid search query - full page result", async ({ page }) => {
     const booksPage = new BooksPage(page);
-    let numOfMovies = await booksPage.getNumOfBooksOnPage();
+    let numOfBooks = await booksPage.getNumOfBooksOnPage();
     let totalNumOfResults = await booksPage.getTotalNumOfBooks();
     await booksPage.search("Harry");
-    await booksPage.verifyNumOfBooksOnPageEquals(numOfMovies);
+    await booksPage.verifyNumOfBooksOnPageEquals(numOfBooks);
     await booksPage.verifyTotalNumOfBooksLessThen(totalNumOfResults);
   });
 

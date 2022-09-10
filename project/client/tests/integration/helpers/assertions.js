@@ -28,20 +28,20 @@ module.exports.verifyMovieTypes = (movieObj) => {
  * Verifies if book has the expected types
  * @param {*} bookObj
  */
- module.exports.verifyBookTypes = (movieObj) => {
+module.exports.verifyBookTypes = (movieObj) => {
   let movieObjExpectedTypes = {
-    bookID: 'string',
+    bookID: "string",
     title: "string",
-    authors: 'string',
-    average_rating: 'number',
-    isbn: 'string',
-    isbn13: 'number',
-    language_code: 'string',
-    num_pages: 'number',
-    ratings_count: 'number',
-    text_reviews_count: 'number',
-    publication_date: 'string',
-    publisher: 'string'
+    authors: "string",
+    average_rating: "number",
+    isbn: "string",
+    isbn13: "number",
+    language_code: "string",
+    num_pages: "number",
+    ratings_count: "number",
+    text_reviews_count: "number",
+    publication_date: "string",
+    publisher: "string",
   };
 
   for (const key in movieObjExpectedTypes) {
@@ -129,4 +129,9 @@ module.exports.verifyMetaValues = (
     metaValues.itemsPerPage,
     `Expected itemsPerPage to be ${expectedItemsPerPage}`
   ).toBe(expectedItemsPerPage);
+};
+
+module.exports.getRandomFloat = (min, max, decimals) => {
+  const str = (Math.random() * (max - min) + min).toFixed(decimals);
+  return parseFloat(str);
 };

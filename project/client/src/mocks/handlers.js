@@ -45,11 +45,7 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json({
-        meta: {
-          count: 1,
-          pageNum: 0,
-          itemsPerPage: 1,
-        },
+        meta: { count: 1, pageNum: 0, itemsPerPage: 1 },
         data: [
           {
             bookID: "1",
@@ -70,4 +66,3 @@ export const handlers = [
     );
   }),
 ];
-

@@ -17,4 +17,23 @@ const checkData = (attribute, alt = "N/A") => {
   return attribute;
 };
 
-export { getStartingNumPagination, getEndingNumPagination, checkData };
+const getImageSrc = (categories) => {
+  if (categories.includes("Romance") || categories.includes("Comedy")) {
+    return "comedy.jpg";
+  } else if (categories.includes("Action")) {
+    return "action.jpg";
+  } else if (categories.includes("Thriller")) {
+    return "thriller.jpg";
+  } else if (categories.includes("Drama")) {
+    return "drama.jpg";
+  } else {
+    return "movie2.jpg";
+  }
+};
+
+export {
+  getStartingNumPagination,
+  getEndingNumPagination,
+  checkData,
+  getImageSrc,
+};

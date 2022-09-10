@@ -78,7 +78,14 @@ const show = async (req, res) => {
   const movieId = req.params.id;
 
   try {
-    const movieData = await Title.findByPk(movieId);
+    const movieData = await Title.findByPk(movieId, {
+      include: {
+        model: Rating,
+        attributes: {
+          exclude: "tconst",
+        },
+      },
+    });
     if (!movieData) {
       throw Error("Invalid id format or value");
     }

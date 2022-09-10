@@ -1,6 +1,7 @@
 import { CalendarIcon, StarIcon } from "./ui/Icons";
 import movie from "../img/movie2.jpg";
-import { checkData } from "../common.js";
+import { checkData, getImageSrc } from "../common.js";
+import useImage from "./ui/Image";
 
 function Movie(props) {
   let { startYear, runtimeMinutes, titleType, primaryTitle, genres, Rating } =
@@ -19,12 +20,15 @@ function Movie(props) {
     minutes = "N/A";
   }
 
+  let imgName = getImageSrc(movieCategories);
+  const { image } = useImage(`${imgName}`);
+
   return (
     <div className="p-4 md:w-1/4" data-testid="movie">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src={movie}
+          src={image}
           alt="blog"
         ></img>
         <div className="p-6">
