@@ -42,26 +42,31 @@ export const handlers = [
 
   rest.get("http://localhost:4000/api/v1/movies/search", (req, res, ctx) => {
     const query = req.url.searchParams.get("query");
+    console.log("NIKOLA");
+    console.log(query);
     return res(
       ctx.status(200),
       ctx.json({
         meta: { count: 1, pageNum: 0, itemsPerPage: 1 },
-        data: [
-          {
-            bookID: "1",
-            title: `Book with title: ${query}`,
-            authors: "Douglas Adams",
-            average_rating: 4.38,
-            isbn: "0517226952",
-            isbn13: 9780517226957,
-            language_code: "eng",
-            num_pages: 815,
-            ratings_count: 3628,
-            text_reviews_count: 254,
-            publication_date: "11/1/2005",
-            publisher: "Gramercy Books",
-          },
-        ],
+        data: {
+          movies: [
+            {
+              tconst: "tt10806040",
+              titleType: "movie",
+              primaryTitle: `Movie with title: ${query}`,
+              originalTitle: "Valimai",
+              isAdult: false,
+              startYear: 2022,
+              endYear: "\\N",
+              runtimeMinutes: 178,
+              genres: "Action,Crime,Thriller",
+              Rating: {
+                averageRating: 6.2,
+                numVotes: 17687,
+              },
+            },
+          ],
+        },
       })
     );
   }),

@@ -8,12 +8,19 @@
     "client": "npm start --workspace=client",
     "imdb": "npm start --workspace=imdb-service",
     "books": "npm start --workspace=books-service",
+    "test:client": "npm test --workspace=client",
+    "test:imdb": "npm test --workspace=imdb-service",
+    "test:books": "npm test --workspace=books-service",
+    "test:integration": "npm run test:integration --workspace=client",
+    "test:e2e": "npm run test:e2e --workspace=client",
+    "test:e2e:headed": "npm run test:e2e:headed --workspace=client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "database:init": "node scripts/initDatabase.js",
     "database:init:imdb": "npm run database:init -- --type=imdb --out=db-imdb.sqlite",
     "database:init:books": "npm run database:init -- --type=books --out=db-books.sqlite",
     "database:import:imdb": "bash scripts/dataimportMovies.sh",
-    "database:import:books": "bash scripts/dataimportBooks.sh"
+    "database:import:books": "bash scripts/dataimportBooks.sh",
+    "report": "npm run report --workspace=client"
   },
   "repository": {
     "type": "git",

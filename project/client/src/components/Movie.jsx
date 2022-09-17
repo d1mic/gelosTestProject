@@ -1,5 +1,4 @@
 import { CalendarIcon, StarIcon } from "./ui/Icons";
-import movie from "../img/movie2.jpg";
 import { checkData, getImageSrc } from "../common.js";
 import useImage from "./ui/Image";
 

@@ -30,7 +30,7 @@ module.exports.verifyMovieTypes = (movieObj) => {
  */
 module.exports.verifyBookTypes = (movieObj) => {
   let movieObjExpectedTypes = {
-    bookID: "string",
+    bookID: "number",
     title: "string",
     authors: "string",
     average_rating: "number",
@@ -74,20 +74,11 @@ module.exports.verifyMovieLimits = (
  * @param {*} avgRatingMin
  * @param {*} numVotesMin
  */
-module.exports.verifyMovieRatingLimits = (
-  rating,
-  avgRatingMin = 6,
-  numVotesMin = 5000
-) => {
+module.exports.verifyMovieRatingLimits = (rating, avgRatingMin = 6) => {
   expect(
     rating.averageRating,
     "Average rating should be greater than or equal to 6"
   ).toBeGreaterThanOrEqual(avgRatingMin);
-
-  expect(
-    rating.numVotes,
-    "Number of votes shoud be greater then or equal to 5000"
-  ).toBeGreaterThanOrEqual(numVotesMin);
 };
 
 /**

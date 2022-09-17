@@ -122,10 +122,8 @@ test.describe("Movies api integration tests", () => {
     const getMovieResponse = JSON.parse(await getMovie.text());
     verifyMovieTypes(getMovieResponse.data);
     let currentRating = getMovieResponse.data.Rating.averageRating;
-    expect(currentRating, 'Rating did not update in the database').toBe(expectedRating);
+    expect(currentRating, "Rating did not update in the database").toBe(
+      expectedRating
+    );
   });
-
-  // TODO: Kombinovano - npr svi movies pa search za jednog
-
-  // TODO: KOmbinovano - npr svi movies pa onda rating da se poklapa sa ovim
 });

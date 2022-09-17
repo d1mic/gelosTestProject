@@ -1,0 +1,41 @@
+
+GET http://localhost:4000/api/v1/movies
+Content-Type: 'application/json'
+
+###
+
+GET http://localhost:4000/api/v1/movies?page=2
+Content-Type: 'application/json'
+
+###
+
+GET http://localhost:4000/api/v1/movies/tt10083340
+Content-Type: 'application/json'
+
+###
+
+PUT http://localhost:4000/api/v1/movies/tt10083340
+content-type: application/json
+
+{
+    "rating": 8
+}
+
+###
+
+GET http://localhost:4001/api/v1/books
+Content-Type: 'application/json'
+
+###
+
+GET http://localhost:4001/api/v1/books/search?query=Bible
+Content-Type: 'application/json'
+
+###
+
+PUT http://localhost:4001/api/v1/books/26
+content-type: application/json
+
+{
+    "rating": 9
+}
